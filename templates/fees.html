@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block title %}Students Fees{% endblock title %}
+
+{% block body %}
+
+  <div class="container mb-3 py-4">
+    <h1 class="text-center">Students Fees</h1>
+    <form method="post" action="/fees">
+    {% csrf_token %}
+    <div class="form-group ">
+        <label for="rollid">Roll Number</label>
+        <input type="text" class="form-control" id="rollid" name="rollid" placeholder="Enter Roll Number">
+    </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+        <div class="form-group">
+            <label for="fees">Fees</label>
+            <input type="text" class="form-control" id="fees" name="fees" placeholder="Enter Total Fees">
+        </div>
+        <div class = "form-group">
+            <label>Select Class</label>
+                <select name = "selectclass" class="form-control" >
+                    <option selected>Select</option>
+                    <option value="Master">Master</option>
+                    {% if data.selectclass == "Intermediate" %}
+                    <option value="Intermediate" selected>Intermediate</option>
+                    {% else %}
+                    <option value="Intermediate">Intermediate</option>
+                    {% endif %}
+    
+                    {% if data.selectclass == "Bachelor" %}
+                    <option value="Bachelor" selected>Bachelor</option>
+                    {% else %}
+                    <option value="Bachelor">Bachelor</option>
+                    {% endif %}
+                  </select>
+        </div>
+  
+       
+        <button class="btn btn-primary" type="submit">Submit</button>
+        
+            <a  href = "/feesrecord"  button class="btn btn-primary" class = "text-right" type="submit">Fees Records</a>
+        
+    </form>
+    
+  </div>
+
+
+
+
+
+{% endblock body %}
+
+{% block footer %}
+{% include 'footer.html' %}
+
+{% endblock footer %}

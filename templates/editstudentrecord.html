@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+
+{% block title %}Edit Student Record{% endblock title %}
+
+
+{% block body %}
+<div class="container mb-3 py-4">
+    <h1 class="text-center">Edit Student Record</h1>
+    {% if key2 %}
+<form method="post" action="{% url 'update' pk=key2.rollid  %}">
+   
+    {% csrf_token %}
+      <div class="form-group ">
+          <label>Roll Number</label>
+          <input type="text" class="form-control" value="{{key2.rollid}}" name="rollid" >
+      </div>
+
+      <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" value= "{{key2.name}}" name="name" >
+      </div>
+      
+      <div class="form-group">
+          <label>Father Name</label>
+          <input type="text" class="form-control" value= "{{key2.father_name}}" name="father_name" >
+      </div> 
+      
+      <div class="form-group">
+          <label>Education</label>
+          <input type="text" class="form-control" value= "{{key2.education}}" name="education" >
+      </div> 
+
+      
+
+      <div class="form-group">
+          <label >City</label>
+          <input type="text" class="form-control" value= "{{key2.city}}" name="city">
+      </div> 
+    
+      <div class = "form-group" >
+          <label>Gender</label>
+          <select name="gender" class="form-control"   >
+             
+    
+              <option value="Male">Male</option>
+              {% if key2.gender == "Female" %}
+              <option value="Female" selected>Female</option>
+              {% else %}
+              <option value="Female">Female</option>
+              {% endif %}
+            </select>
+        </div>
+        
+
+    <div class = "form-group">
+      <label>Select Class</label>
+          <select name = "selectclass" class="form-control" >
+              <option value="Master">Master</option>
+              {% if key2.selectclass == "Intermediate" %}
+              <option value="Intermediate" selected>Intermediate</option>
+              {% else %}
+              <option value="Intermediate">Intermediate</option>
+              {% endif %}
+
+              {% if key2.selectclass == "Bachelor" %}
+              <option value="Bachelor" selected>Bachelor</option>
+              {% else %}
+              <option value="Bachelor">Bachelor</option>
+              {% endif %}
+            </select>
+  </div>
+  
+      
+      <button class="btn btn-primary my-3" type="submit">Submit</button>
+  </form>
+  {% endif %}
+</div>
+
+
+
+
+
+
+
+{% endblock body %}
+
+{% block footer %}
+{% include 'footer.html' %}
+
+{% endblock footer %}

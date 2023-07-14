@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+{% block title %}Admin Portal{% endblock title %}
+
+{% block body %}
+<body>
+  <div class="container my-3">
+    <h1 class = "my-2 text-center"><b>School Management System</b></h1>
+
+    <div class = "container-text-center my-3">
+  
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/static/s.jpg" class="d-block w-100" alt="...">
+  
+          <div class="card-body">
+            <p class="card-text">Students Record</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+          <a  href = "/Studentrecord" button type="button" class= "btn btn-outline-success btn-sm">View</a></button>
+              
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/static/t.jpg" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <p class="card-text">Teachers Record</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+            <a  href = "/teacherrecord" button type="button" class= "btn btn-outline-success btn-sm">View</a>
+             
+              </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/static/tt.jpg" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <p class="card-text">Timetable</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+            <a  href = "/timetable" button type="button" class= "btn btn-outline-success btn-sm">View</a>
+                
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/static/tl.jpg" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <p class="card-text">Teachers Lecture Timetable</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <a  href = "/teacherslecture" button type="button" class= "btn btn-outline-success btn-sm">View</a>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/static/ss.jpg" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <p class="card-text">School Student Fees</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <a  href = "/fees" button type="button" class= "btn btn-outline-success btn-sm">View</a>
+               
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/static/c.jpg" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <p class="card-text">Comments</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <a  href = "/comments" button type="button" class= "btn btn-outline-success btn-sm">View</a>
+               
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+
+
+
+</body>
+
+{% endblock body %}
+
+{% block footer %}
+{% include 'footer.html' %}
+
+{% endblock footer %}

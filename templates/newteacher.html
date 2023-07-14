@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block title %}New Teachers{% endblock title %}
+{% block body %}
+
+  <div class="container mb-3 py-4">
+    <h1 class="text-center">New Teachers Registration</h1>
+    <form method="post" action="/newteacher">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+        
+       
+        
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>  
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter your Address">
+        </div>    
+        
+        <div class="form-group">
+            <label for="subject">Subject Specialist</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter your Subject Specialist">
+        </div>
+        <button class="btn btn-primary" type="submit">Registration</button>
+    </form>
+  
+  </div>
+
+
+
+
+
+
+
+{% endblock body %}
+{% block footer %}
+{% include 'footer.html' %}
+
+{% endblock footer %}

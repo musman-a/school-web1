@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block title %}Fees Record{% endblock title %}
+{% block body %}
+<div class = "p-3  bg-danger text-light text-center"><h1><b>Students Fees Records</b></h1></div>
+    <table class="table table-striped table-dark ">
+      <thead>
+          <tr >
+              <th>Roll Number</th>
+              <th>Name</th>
+              <th>Fees</th>
+              <th>Class</th>
+              <th>Date</th>
+           
+          </tr>
+      </thead>
+      <tbody>
+        
+         {% for Recordfee in feesrecord %}
+       
+  
+          <tr >
+          
+          <td>{{Recordfee.rollid}}</td>
+          <td>{{Recordfee.name}}</td>
+          <td>{{Recordfee.fees}}</td>
+          <td>{{Recordfee.selectclass}}</td>
+  
+          <td>{{Recordfee.date}}</td>
+          <td>
+          <a  href = "feesrecord/{{Recordfee.rollid}}" button type="button" class= "btn btn-primary btn-sm">Delete</a></td>
+           
+             
+          </tr>
+         {% endfor %}
+      </tbody>
+  </table>
+  
+      
+  </div>        
+         
+  
+
+
+
+
+
+
+
+{% endblock body %}
+{% block footer %}
+{% include 'footer.html' %}
+
+{% endblock footer %}
